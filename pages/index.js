@@ -42,7 +42,7 @@ const Home = () => (
       <h1>
         Lets explore some page transitions!
       </h1>
-      <Image src="/img1.jpg" alt="placeholder" width="600" height="600" />
+      <Image src="/img1.jpg" alt="placeholder" width="600" height="600" priority={true} />
     </Hero>
     <BodyCopy>
       <p>
