@@ -72,6 +72,42 @@ const GlobalStyle = createGlobalStyle`
     background-color: #aaa;
     perspective: 1800px;
   }
+
+  .section {
+  width: 100%;
+  height: 100vh;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.boxes-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.box {
+  background-color: var(--green);
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 100px;
+}
 `;
 
 export default GlobalStyle;

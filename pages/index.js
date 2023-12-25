@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+// import { useRef } from 'react';
+import { motion } from 'framer-motion';
 // import Image1 from 'next/legacy/image'
 
-const Hero = styled.section`
+const Hero = styled(motion.section)`
   height: 90vh;
   width: 100%;
   position: relative;
@@ -36,9 +38,11 @@ const BodyCopy = styled.section`
   margin: 0 auto;
 `;
 
+
+
 const Home = () => (
   <main>
-    <Hero>
+    <Hero whileHover={{ scale: 1.2 }} initial={{scale: 0}} animate={{ scale: 3 }} >
       <h1>
         Lets explore some page transitions!
       </h1>

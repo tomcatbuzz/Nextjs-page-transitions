@@ -7,6 +7,11 @@ import { AnimatePresence } from 'framer-motion';
 import Preloader from '../components/Preloader';
 import { StyleSheetManager } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
+import { gsap } from 'gsap/dist/gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const App = ({ Component, pageProps }) => {
   const [isLoading, setIsLoading] = useState(true)

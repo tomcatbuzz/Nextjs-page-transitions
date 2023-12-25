@@ -30,7 +30,10 @@ const About = () => (
     <Hero>
       <img src="https://source.unsplash.com/user/erondu/600x600" />
       <h1>This is the ABOUT page</h1>
+      <button>
       <Link href="/">Oh go back!</Link>
+      </button>
+      
     </Hero>
     <BodyCopy>
       <p>

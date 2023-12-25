@@ -61,6 +61,8 @@ const Header = () => {
       <A href="/" isActive={route === '/'}>Home</A>
       <A href="/about" isActive={route === '/about'}>About</A>
       <A href="/contact" isActive={route === '/contact'}>Contact</A>
+      <A href="/grid" isActive={route === '/grid'}>Grid</A>
+      <A href="/scroll" isActive={route === '/scroll'}>Scroll</A>
     </StyledHeader>
   );
 };

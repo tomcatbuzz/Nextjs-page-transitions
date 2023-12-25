@@ -53,27 +53,27 @@ ${'' /* transform-style: preserve-3d; */}
 }
 
 ${'' /* flip animation */}
-&.page-enter-active,
+${'' /* &.page-enter-active,
 &.page-exit-active {
   .page-transition-inner {
     height: 100vh;
     overflow: hidden;
-    ${'' /* animation: 1000ms ${transitionZoom} cubic-bezier(0.45, 0, 0.55, 1) both; */}
+    animation: 1000ms ${transitionZoom} cubic-bezier(0.45, 0, 0.55, 1) both;
     background: white;
   }
-}
+} */}
 
-&.page-exit {
+${'' /* &.page-exit {
   ~ .wipe {
     transform: translateY(100%);
   }
-}
+} */}
 
 &.page-exit-active {
-  ~ .wipe {
+  ${'' /* ~ .wipe {
     transform: translateY(0);
     transition: transform 1000ms ease;
-  }
+  } */}
 
   main {
     transform: translateY(-${(props) => props.routingPageOffset}px);
@@ -84,12 +84,12 @@ ${'' /* flip animation */}
   backface-visibility: hidden;
 }
 
-&.page-enter-done {
+${'' /* &.page-enter-done {
   ~ .wipe {
     transform: translateY(-100%);
     transition: transform 1000ms ease;
   }
-}
+} */}
 `
 
 const Wipe = styled.div`
@@ -116,6 +116,7 @@ position: fixed;
 display: grid;
 grid-template-rows: repeat(10, 1fr);
 grid-template-columns: repeat(10, 1fr);
+${'' /* z-index: 8; */}
 
   div {
     background: #444;
@@ -127,6 +128,8 @@ const PageTransition = ({ children, route, routingPageOffset }) => {
   // gsap animation
   const tl = useRef()
   const transitionRef = useRef()
+  const colors = Array.from({ length: 100 }, () => "#" + ((Math.random() * 0xffffff) << 0).toString(16).padStart(6, "0"));
+
 
   const [transitioning, setTransitioning] = useState()
   const playTransition = () => {
@@ -195,8 +198,8 @@ const PageTransition = ({ children, route, routingPageOffset }) => {
     {/* <Wipe className="wipe" /> */}
     {/* gsap animations */}
     <Grid ref={transitionRef}>
-      {[...Array(100)].map((_, i) => (
-        <div key={i} />
+      {[...Array(100)].map((_, i, color) => (
+        <div key={i} color={color} />
       ))}
     </Grid>
     </>
